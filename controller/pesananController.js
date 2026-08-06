@@ -98,3 +98,13 @@ export const deletePesanan = async (req, res)=>{
     }
 };
 
+export const detailPesanan = async (req, res)=>{
+    try{
+        const {id} = req.params;
+        const result = await Pesanan.findOne({_id: req.params.id});
+        userPayloads(200, 'Detail Data', result, res);
+    }catch(err){
+        userPayloads(500, 'Gagal Mengambil Data', null, res);
+    }
+}
+
