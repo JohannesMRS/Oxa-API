@@ -7,11 +7,13 @@ import Menu from './models/menu.js';
 import menus from './routes/menu.js';
 import Pesanan from './models/pesanan.js';
 import pesanans from './routes/pesanan.js';
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res)=>{
     res.send('Berhasil')
